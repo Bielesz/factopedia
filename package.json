@@ -1,7 +1,7 @@
 {
-  "name": "today-i-learned",
+  "name": "factopedia",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@supabase/supabase-js": "^2.1.1",
     "@testing-library/jest-dom": "^5.16.5",

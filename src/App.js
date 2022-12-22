@@ -57,12 +57,12 @@ function Loader() {
 }
 
 function Header({ showForm, setShowForm }) {
-  const appTitle = "Today I Learned";
+  const appTitle = "Factopedia";
 
   return (
     <header className="header">
       <div className="logo">
-        <img src="logo.png" height="68" width="68" alt="Today I Learned Logo" />
+        <img src="logo.png" height="68" width="68" alt="factopedia" />
         <h1>{appTitle}</h1>
       </div>
 
@@ -84,7 +84,6 @@ const CATEGORIES = [
   { name: "entertainment", color: "#db2777" },
   { name: "health", color: "#14b8a6" },
   { name: "history", color: "#f97316" },
-  { name: "news", color: "#8b5cf6" },
 ];
 
 function isValidHttpUrl(string) {
@@ -112,18 +111,6 @@ function NewFactForm({ setFacts, setShowForm }) {
 
     // 2. Check if data is valid. If so, create a new fact
     if (text && isValidHttpUrl(source) && category && textLength <= 200) {
-      // 3. Create a new fact object
-      // const newFact = {
-      //   id: Math.round(Math.random() * 10000000),
-      //   text,
-      //   source,
-      //   category,
-      //   votesInteresting: 0,
-      //   votesMindblowing: 0,
-      //   votesFalse: 0,
-      //   createdIn: new Date().getFullYear(),
-      // };
-
       // 3. Upload fact to Supabase and receive the new fact object
       setIsUploading(true);
       const { data: newFact, error } = await supabase
